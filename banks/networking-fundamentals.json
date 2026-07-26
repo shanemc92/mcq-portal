@@ -1,0 +1,61 @@
+{
+ "title": "Networking Fundamentals",
+ "description": "Sample bank covering core networking concepts (demo data).",
+ "questions": [
+  {
+   "topic": "OSI Model",
+   "q": "Which OSI layer is responsible for routing packets between networks?",
+   "correct": "Network (Layer 3)",
+   "distractors": [
+    "Data Link (Layer 2)",
+    "Transport (Layer 4)",
+    "Session (Layer 5)"
+   ],
+   "explain": "Layer 3 handles logical addressing and routing between different networks; Layer 2 only handles delivery within a single local segment."
+  },
+  {
+   "topic": "OSI Model",
+   "q": "Which protocol operates at the Transport layer and guarantees delivery?",
+   "correct": "TCP",
+   "distractors": [
+    "UDP",
+    "ICMP",
+    "ARP"
+   ],
+   "explain": "TCP is connection-oriented and provides reliable, ordered delivery via acknowledgements and retransmission. UDP is connectionless with no such guarantee."
+  },
+  {
+   "topic": "Addressing",
+   "q": "What is the default subnet mask for a Class C network?",
+   "correct": "255.255.255.0",
+   "distractors": [
+    "255.255.0.0",
+    "255.0.0.0",
+    "255.255.255.128"
+   ],
+   "explain": "Class C networks use the first 24 bits for the network portion, leaving 8 bits (256 addresses) for hosts."
+  },
+  {
+   "topic": "Addressing",
+   "q": "Which address range is reserved for private use per RFC 1918?",
+   "correct": "10.0.0.0/8",
+   "distractors": [
+    "8.8.8.0/24",
+    "169.254.0.0/16",
+    "192.0.2.0/24"
+   ],
+   "explain": "10.0.0.0/8 is one of three RFC 1918 private ranges, alongside 172.16.0.0/12 and 192.168.0.0/16. 169.254.0.0/16 is link-local (APIPA), not private-use."
+  },
+  {
+   "topic": "DNS",
+   "q": "Which DNS record type maps a hostname to an IPv4 address?",
+   "correct": "A record",
+   "distractors": [
+    "CNAME record",
+    "MX record",
+    "TXT record"
+   ],
+   "explain": "An A record maps a name to an IPv4 address directly. AAAA does the same for IPv6; CNAME is an alias to another name."
+  }
+ ]
+}

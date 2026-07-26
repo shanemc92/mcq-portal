@@ -1,0 +1,46 @@
+[
+ {
+  "topic": "Geography",
+  "q": "What is the capital of Australia?",
+  "correct": "Canberra",
+  "distractors": [
+   "Sydney",
+   "Melbourne",
+   "Perth"
+  ],
+  "explain": "Canberra was purpose-built as a compromise capital between rivals Sydney and Melbourne."
+ },
+ {
+  "topic": "Science",
+  "q": "What is the chemical symbol for gold?",
+  "correct": "Au",
+  "distractors": [
+   "Ag",
+   "Gd",
+   "Go"
+  ],
+  "explain": "Au comes from the Latin 'aurum'. Ag (silver) comes from 'argentum'."
+ },
+ {
+  "topic": "Science",
+  "q": "How many bones are in the adult human body?",
+  "correct": "206",
+  "distractors": [
+   "186",
+   "216",
+   "256"
+  ],
+  "explain": "Babies are born with around 270 bones, many of which fuse together by adulthood, leaving 206."
+ },
+ {
+  "topic": "History",
+  "q": "In what year did the Berlin Wall fall?",
+  "correct": "1989",
+  "distractors": [
+   "1979",
+   "1991",
+   "1985"
+  ],
+  "explain": "The wall fell on 9 November 1989, and Germany formally reunified less than a year later in October 1990."
+ }
+]

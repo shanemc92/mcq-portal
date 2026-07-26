@@ -1,0 +1,24 @@
+{
+ "title": "My Course Name",
+ "description": "One-line description shown under the dropdown (optional).",
+ "questions": [
+  {
+   "topic": "Section A",
+   "q": "What is the question being asked?",
+   "correct": "The correct option (kept verbatim).",
+   "distractors": [
+    "A plausible wrong option (real, adjacent concept).",
+    "Another plausible wrong option, similar length.",
+    "A third believable distractor, not obviously off."
+   ],
+   "explain": "Shown after answering: why the correct answer is right."
+  },
+  {
+   "topic": "Section B",
+   "q": "Second question. 'topic' groups the score breakdown.",
+   "correct": "Right answer.",
+   "distractors": ["Wrong 1.", "Wrong 2.", "Wrong 3."],
+   "explain": "Optional but recommended - this is where the learning happens."
+  }
+ ]
+}

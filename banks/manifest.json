@@ -1,0 +1,24 @@
+[
+ {
+  "file": "general-knowledge.json",
+  "title": "General Knowledge",
+  "description": "",
+  "count": 4,
+  "topics": [
+   "Geography",
+   "History",
+   "Science"
+  ]
+ },
+ {
+  "file": "networking-fundamentals.json",
+  "title": "Networking Fundamentals",
+  "description": "Sample bank covering core networking concepts (demo data).",
+  "count": 5,
+  "topics": [
+   "Addressing",
+   "DNS",
+   "OSI Model"
+  ]
+ }
+]
