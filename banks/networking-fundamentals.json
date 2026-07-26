@@ -6,56 +6,155 @@
    "topic": "OSI Model",
    "q": "Which OSI layer is responsible for routing packets between networks?",
    "correct": "Network (Layer 3)",
-   "distractors": [
-    "Data Link (Layer 2)",
-    "Transport (Layer 4)",
-    "Session (Layer 5)"
-   ],
+   "distractors": ["Data Link (Layer 2)", "Transport (Layer 4)", "Session (Layer 5)"],
    "explain": "Layer 3 handles logical addressing and routing between different networks; Layer 2 only handles delivery within a single local segment."
   },
   {
    "topic": "OSI Model",
    "q": "Which protocol operates at the Transport layer and guarantees delivery?",
    "correct": "TCP",
-   "distractors": [
-    "UDP",
-    "ICMP",
-    "ARP"
-   ],
+   "distractors": ["UDP", "ICMP", "ARP"],
    "explain": "TCP is connection-oriented and provides reliable, ordered delivery via acknowledgements and retransmission. UDP is connectionless with no such guarantee."
+  },
+  {
+   "topic": "OSI Model",
+   "q": "At which OSI layer do switches typically operate?",
+   "correct": "Data Link (Layer 2)",
+   "distractors": ["Physical (Layer 1)", "Network (Layer 3)", "Transport (Layer 4)"],
+   "explain": "Switches forward frames based on MAC addresses, which is Layer 2 behaviour. Layer 3 switches also route, but the core switching function is Layer 2."
+  },
+  {
+   "topic": "OSI Model",
+   "q": "Which layer is responsible for encryption and data formatting (e.g. SSL/TLS session setup)?",
+   "correct": "Presentation (Layer 6)",
+   "distractors": ["Application (Layer 7)", "Session (Layer 5)", "Transport (Layer 4)"],
+   "explain": "The Presentation layer handles translation, compression and encryption of data between the application and the network. In practice TLS spans several layers, but it's classically taught here."
   },
   {
    "topic": "Addressing",
    "q": "What is the default subnet mask for a Class C network?",
    "correct": "255.255.255.0",
-   "distractors": [
-    "255.255.0.0",
-    "255.0.0.0",
-    "255.255.255.128"
-   ],
+   "distractors": ["255.255.0.0", "255.0.0.0", "255.255.255.128"],
    "explain": "Class C networks use the first 24 bits for the network portion, leaving 8 bits (256 addresses) for hosts."
   },
   {
    "topic": "Addressing",
    "q": "Which address range is reserved for private use per RFC 1918?",
    "correct": "10.0.0.0/8",
-   "distractors": [
-    "8.8.8.0/24",
-    "169.254.0.0/16",
-    "192.0.2.0/24"
-   ],
+   "distractors": ["8.8.8.0/24", "169.254.0.0/16", "192.0.2.0/24"],
    "explain": "10.0.0.0/8 is one of three RFC 1918 private ranges, alongside 172.16.0.0/12 and 192.168.0.0/16. 169.254.0.0/16 is link-local (APIPA), not private-use."
+  },
+  {
+   "topic": "Addressing",
+   "q": "How many usable host addresses are in a /30 subnet?",
+   "correct": "2",
+   "distractors": ["4", "6", "14"],
+   "explain": "A /30 has 4 total addresses; subtracting the network and broadcast address leaves 2 usable host addresses."
+  },
+  {
+   "topic": "Addressing",
+   "q": "Which of these is a valid IPv6 loopback address?",
+   "correct": "::1",
+   "distractors": ["127.0.0.1", "fe80::1", "::0.0.0.1"],
+   "explain": "::1 is the IPv6 loopback address, equivalent to 127.0.0.1 in IPv4. fe80::/10 is the link-local range, not loopback."
+  },
+  {
+   "topic": "Addressing",
+   "q": "What does CIDR notation /24 indicate?",
+   "correct": "The first 24 bits are the network portion",
+   "distractors": ["24 hosts are allowed on the subnet", "The subnet uses 24 VLANs", "24 is the default gateway's last octet"],
+   "explain": "CIDR notation states how many leading bits of the address form the network prefix; /24 corresponds to a 255.255.255.0 mask."
   },
   {
    "topic": "DNS",
    "q": "Which DNS record type maps a hostname to an IPv4 address?",
    "correct": "A record",
-   "distractors": [
-    "CNAME record",
-    "MX record",
-    "TXT record"
-   ],
+   "distractors": ["CNAME record", "MX record", "TXT record"],
    "explain": "An A record maps a name to an IPv4 address directly. AAAA does the same for IPv6; CNAME is an alias to another name."
+  },
+  {
+   "topic": "DNS",
+   "q": "What is the purpose of an MX record?",
+   "correct": "It specifies the mail server responsible for a domain",
+   "distractors": ["It maps a name to an IPv6 address", "It defines a reverse DNS lookup", "It stores arbitrary text data for the domain"],
+   "explain": "MX (Mail Exchange) records tell other mail servers where to deliver email for a domain."
+  },
+  {
+   "topic": "DNS",
+   "q": "What port does DNS typically use for standard queries?",
+   "correct": "UDP 53",
+   "distractors": ["TCP 53 only", "UDP 43", "TCP 43"],
+   "explain": "DNS primarily uses UDP port 53 for queries, falling back to TCP 53 for larger responses such as zone transfers."
+  },
+  {
+   "topic": "DNS",
+   "q": "What does a CNAME record do?",
+   "correct": "Creates an alias pointing to another hostname",
+   "distractors": ["Maps a hostname directly to an IP address", "Publishes the domain's mail servers", "Verifies domain ownership"],
+   "explain": "A CNAME record points one hostname to another hostname, which is then resolved further, rather than pointing directly to an IP."
+  },
+  {
+   "topic": "Routing",
+   "q": "What metric does OSPF primarily use to calculate the best path?",
+   "correct": "Cost, based on link bandwidth",
+   "distractors": ["Hop count only", "Delay only", "Number of ASes traversed"],
+   "explain": "OSPF is a link-state protocol that calculates cost typically based on interface bandwidth, unlike RIP which uses hop count."
+  },
+  {
+   "topic": "Routing",
+   "q": "Which routing protocol is classified as a distance-vector protocol using hop count?",
+   "correct": "RIP",
+   "distractors": ["OSPF", "BGP", "IS-IS"],
+   "explain": "RIP (Routing Information Protocol) is a simple distance-vector protocol limited to a maximum of 15 hops, with hop count as its metric."
+  },
+  {
+   "topic": "Routing",
+   "q": "What is the primary purpose of BGP?",
+   "correct": "Routing between autonomous systems on the internet",
+   "distractors": ["Resolving hostnames to IP addresses", "Assigning IP addresses dynamically", "Encrypting traffic between routers"],
+   "explain": "BGP (Border Gateway Protocol) is the protocol that exchanges routing information between different autonomous systems, forming the backbone of internet routing."
+  },
+  {
+   "topic": "Transport Layer",
+   "q": "What is the three-way handshake used to establish?",
+   "correct": "A TCP connection",
+   "distractors": ["A UDP session", "An ARP mapping", "A DNS query"],
+   "explain": "TCP uses a SYN, SYN-ACK, ACK exchange (the three-way handshake) to establish a reliable connection before data transfer begins."
+  },
+  {
+   "topic": "Transport Layer",
+   "q": "Which port is commonly used by HTTPS?",
+   "correct": "443",
+   "distractors": ["80", "21", "25"],
+   "explain": "HTTPS uses TCP port 443 by default. Port 80 is standard HTTP, 21 is FTP, and 25 is SMTP."
+  },
+  {
+   "topic": "Transport Layer",
+   "q": "Why might an application choose UDP over TCP?",
+   "correct": "Lower latency, when occasional packet loss is acceptable",
+   "distractors": ["UDP guarantees delivery order", "UDP is always more secure", "UDP requires a handshake, improving reliability"],
+   "explain": "UDP has no connection setup or retransmission overhead, making it suitable for latency-sensitive traffic like video or voice where some loss is tolerable."
+  },
+  {
+   "topic": "Network Devices",
+   "q": "What is the main function of a default gateway?",
+   "correct": "It routes traffic destined for networks outside the local subnet",
+   "distractors": ["It assigns IP addresses to hosts", "It translates hostnames to IP addresses", "It filters traffic based on MAC address only"],
+   "explain": "A default gateway is the router a host sends traffic to when the destination isn't on its own local subnet."
+  },
+  {
+   "topic": "Network Devices",
+   "q": "What does NAT primarily allow a network to do?",
+   "correct": "Share a single public IP address among multiple private hosts",
+   "distractors": ["Encrypt traffic between two networks", "Automatically assign DNS servers", "Prevent all denial-of-service attacks"],
+   "explain": "Network Address Translation lets many devices with private IP addresses share one or a few public IP addresses when communicating externally."
+  },
+  {
+   "topic": "Network Devices",
+   "q": "What is the purpose of VLANs?",
+   "correct": "To logically segment a physical network into separate broadcast domains",
+   "distractors": ["To physically separate cabling between switches", "To increase the maximum transmission unit (MTU)", "To assign static IP addresses automatically"],
+   "explain": "VLANs (Virtual LANs) allow a single physical switch infrastructure to be divided into multiple isolated logical networks."
   }
  ]
 }

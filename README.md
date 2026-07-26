@@ -3,10 +3,11 @@
 A HackTheBox-themed, offline MCQ flashcard player. Each course is a separate
 JSON bank in `banks/`; a dropdown lets you pick which one to drill.
 
-![screenshot](docs/screenshot.gif)
+![screenshot](docs/screenshot.png)
 
-Two generic sample banks are included (`networking-fundamentals.json`,
-`general-knowledge.json`) so you can open `index.html` and try the course
+Three generic sample banks are included (`networking-fundamentals.json`,
+`general-knowledge.json`, `linux-command-line.json` — 20+ questions each) so
+you can open `index.html` and try the course
 switcher immediately.
 
 ## Folder layout

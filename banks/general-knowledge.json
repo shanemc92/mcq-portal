@@ -3,44 +3,147 @@
   "topic": "Geography",
   "q": "What is the capital of Australia?",
   "correct": "Canberra",
-  "distractors": [
-   "Sydney",
-   "Melbourne",
-   "Perth"
-  ],
+  "distractors": ["Sydney", "Melbourne", "Perth"],
   "explain": "Canberra was purpose-built as a compromise capital between rivals Sydney and Melbourne."
+ },
+ {
+  "topic": "Geography",
+  "q": "Which is the longest river in the world by length?",
+  "correct": "The Nile",
+  "distractors": ["The Amazon", "The Yangtze", "The Mississippi"],
+  "explain": "The Nile is traditionally measured as the longest river at roughly 6,650 km, though some studies argue the Amazon is longer depending on measurement method."
+ },
+ {
+  "topic": "Geography",
+  "q": "Which country has the largest population in the world?",
+  "correct": "India",
+  "distractors": ["China", "United States", "Indonesia"],
+  "explain": "India overtook China as the world's most populous country in 2023, according to United Nations estimates."
+ },
+ {
+  "topic": "Geography",
+  "q": "Mount Kilimanjaro is located in which country?",
+  "correct": "Tanzania",
+  "distractors": ["Kenya", "Uganda", "Ethiopia"],
+  "explain": "Kilimanjaro sits entirely within Tanzania, close to the border with Kenya, and is Africa's tallest mountain."
  },
  {
   "topic": "Science",
   "q": "What is the chemical symbol for gold?",
   "correct": "Au",
-  "distractors": [
-   "Ag",
-   "Gd",
-   "Go"
-  ],
+  "distractors": ["Ag", "Gd", "Go"],
   "explain": "Au comes from the Latin 'aurum'. Ag (silver) comes from 'argentum'."
  },
  {
   "topic": "Science",
   "q": "How many bones are in the adult human body?",
   "correct": "206",
-  "distractors": [
-   "186",
-   "216",
-   "256"
-  ],
+  "distractors": ["186", "216", "256"],
   "explain": "Babies are born with around 270 bones, many of which fuse together by adulthood, leaving 206."
+ },
+ {
+  "topic": "Science",
+  "q": "What gas do plants primarily absorb for photosynthesis?",
+  "correct": "Carbon dioxide",
+  "distractors": ["Oxygen", "Nitrogen", "Hydrogen"],
+  "explain": "Plants absorb carbon dioxide and, using sunlight and water, convert it into glucose and oxygen during photosynthesis."
+ },
+ {
+  "topic": "Science",
+  "q": "What is the speed of light in a vacuum, approximately?",
+  "correct": "300,000 km/s",
+  "distractors": ["150,000 km/s", "1,000,000 km/s", "30,000 km/s"],
+  "explain": "Light travels at approximately 299,792 km/s in a vacuum, commonly rounded to 300,000 km/s."
+ },
+ {
+  "topic": "Science",
+  "q": "Which planet in our solar system has the most moons?",
+  "correct": "Saturn",
+  "distractors": ["Jupiter", "Neptune", "Uranus"],
+  "explain": "As of recent counts, Saturn has overtaken Jupiter with well over 100 confirmed moons."
  },
  {
   "topic": "History",
   "q": "In what year did the Berlin Wall fall?",
   "correct": "1989",
-  "distractors": [
-   "1979",
-   "1991",
-   "1985"
-  ],
+  "distractors": ["1979", "1991", "1985"],
   "explain": "The wall fell on 9 November 1989, and Germany formally reunified less than a year later in October 1990."
+ },
+ {
+  "topic": "History",
+  "q": "Who was the first President of the United States?",
+  "correct": "George Washington",
+  "distractors": ["Thomas Jefferson", "John Adams", "Benjamin Franklin"],
+  "explain": "George Washington served as the first US President from 1789 to 1797, after leading the Continental Army."
+ },
+ {
+  "topic": "History",
+  "q": "The Great Fire of London occurred in which year?",
+  "correct": "1666",
+  "distractors": ["1605", "1721", "1512"],
+  "explain": "The Great Fire of London burned for four days in September 1666, destroying much of the medieval city."
+ },
+ {
+  "topic": "History",
+  "q": "Which empire built the Colosseum in Rome?",
+  "correct": "The Roman Empire",
+  "distractors": ["The Byzantine Empire", "The Ottoman Empire", "The Greek Empire"],
+  "explain": "The Colosseum was completed around 80 AD under the Roman Empire, during the Flavian dynasty."
+ },
+ {
+  "topic": "Literature",
+  "q": "Who wrote the novel 'Pride and Prejudice'?",
+  "correct": "Jane Austen",
+  "distractors": ["Charlotte Bronte", "Emily Bronte", "George Eliot"],
+  "explain": "Jane Austen published 'Pride and Prejudice' in 1813; it remains one of the most widely read novels in English."
+ },
+ {
+  "topic": "Literature",
+  "q": "Which playwright wrote 'Romeo and Juliet'?",
+  "correct": "William Shakespeare",
+  "distractors": ["Christopher Marlowe", "Ben Jonson", "Oscar Wilde"],
+  "explain": "Shakespeare wrote 'Romeo and Juliet' in the mid-1590s; it's one of his most performed tragedies."
+ },
+ {
+  "topic": "Arts",
+  "q": "Who painted the 'Mona Lisa'?",
+  "correct": "Leonardo da Vinci",
+  "distractors": ["Michelangelo", "Raphael", "Titian"],
+  "explain": "Leonardo da Vinci painted the 'Mona Lisa' in the early 16th century; it now hangs in the Louvre in Paris."
+ },
+ {
+  "topic": "Arts",
+  "q": "Which composer wrote the 'Ninth Symphony', featuring the 'Ode to Joy'?",
+  "correct": "Ludwig van Beethoven",
+  "distractors": ["Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert"],
+  "explain": "Beethoven composed his Ninth Symphony in 1824, notable for its choral finale setting Schiller's 'Ode to Joy'."
+ },
+ {
+  "topic": "Sports",
+  "q": "How many players are on a standard football (soccer) team on the pitch at once?",
+  "correct": "11",
+  "distractors": ["9", "10", "12"],
+  "explain": "Each football team fields 11 players, including the goalkeeper, during normal play."
+ },
+ {
+  "topic": "Sports",
+  "q": "In which sport would you perform a 'slam dunk'?",
+  "correct": "Basketball",
+  "distractors": ["Volleyball", "Handball", "Netball"],
+  "explain": "A slam dunk is a basketball move where a player jumps and forces the ball directly down through the hoop."
+ },
+ {
+  "topic": "General",
+  "q": "What is the largest ocean on Earth?",
+  "correct": "The Pacific Ocean",
+  "distractors": ["The Atlantic Ocean", "The Indian Ocean", "The Arctic Ocean"],
+  "explain": "The Pacific Ocean covers roughly a third of the Earth's surface, making it the largest and deepest ocean."
+ },
+ {
+  "topic": "General",
+  "q": "Which currency is used in Japan?",
+  "correct": "Yen",
+  "distractors": ["Won", "Yuan", "Baht"],
+  "explain": "The yen has been Japan's official currency since 1871."
  }
 ]

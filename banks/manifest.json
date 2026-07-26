@@ -3,22 +3,44 @@
   "file": "general-knowledge.json",
   "title": "General Knowledge",
   "description": "",
-  "count": 4,
+  "count": 21,
   "topics": [
+   "Arts",
+   "General",
    "Geography",
    "History",
-   "Science"
+   "Literature",
+   "Science",
+   "Sports"
+  ]
+ },
+ {
+  "file": "linux-command-line.json",
+  "title": "Linux Command Line Basics",
+  "description": "Sample bank covering common Linux shell commands and concepts (demo data).",
+  "count": 21,
+  "topics": [
+   "File Management",
+   "File Navigation",
+   "Package/System",
+   "Permissions",
+   "Process Management",
+   "Redirection",
+   "Text Processing"
   ]
  },
  {
   "file": "networking-fundamentals.json",
   "title": "Networking Fundamentals",
   "description": "Sample bank covering core networking concepts (demo data).",
-  "count": 5,
+  "count": 22,
   "topics": [
    "Addressing",
    "DNS",
-   "OSI Model"
+   "Network Devices",
+   "OSI Model",
+   "Routing",
+   "Transport Layer"
   ]
  }
 ]

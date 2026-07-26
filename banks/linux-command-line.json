@@ -1,0 +1,153 @@
+{
+ "title": "Linux Command Line Basics",
+ "description": "Sample bank covering common Linux shell commands and concepts (demo data).",
+ "questions": [
+  {
+   "topic": "File Navigation",
+   "q": "Which command prints the current working directory?",
+   "correct": "pwd",
+   "distractors": ["cd", "ls", "whoami"],
+   "explain": "pwd stands for 'print working directory' and outputs the absolute path of where you currently are in the filesystem."
+  },
+  {
+   "topic": "File Navigation",
+   "q": "What does the command 'cd ..' do?",
+   "correct": "Moves up one directory level",
+   "distractors": ["Returns to the home directory", "Lists hidden files", "Creates a new directory"],
+   "explain": "'..' refers to the parent directory, so 'cd ..' moves the shell up one level in the directory tree."
+  },
+  {
+   "topic": "File Navigation",
+   "q": "Which flag makes 'ls' show hidden files?",
+   "correct": "-a",
+   "distractors": ["-l", "-h", "-r"],
+   "explain": "'ls -a' lists all entries including hidden files and directories, which start with a dot."
+  },
+  {
+   "topic": "File Management",
+   "q": "Which command copies files?",
+   "correct": "cp",
+   "distractors": ["mv", "rm", "ln"],
+   "explain": "cp copies files or directories; mv moves or renames them, and rm deletes them."
+  },
+  {
+   "topic": "File Management",
+   "q": "What does 'rm -rf' do when run on a directory?",
+   "correct": "Recursively and forcibly deletes it without confirmation",
+   "distractors": ["Renames it to a backup file", "Compresses it into an archive", "Moves it to a trash folder"],
+   "explain": "-r makes rm recurse into directories, and -f suppresses confirmation prompts, so 'rm -rf' deletes a directory tree immediately and irreversibly."
+  },
+  {
+   "topic": "File Management",
+   "q": "Which command creates a new empty directory?",
+   "correct": "mkdir",
+   "distractors": ["touch", "mkfile", "newdir"],
+   "explain": "mkdir creates a new directory; touch creates or updates the timestamp of a file, not a directory."
+  },
+  {
+   "topic": "File Management",
+   "q": "What does 'touch file.txt' do if file.txt doesn't exist?",
+   "correct": "Creates an empty file named file.txt",
+   "distractors": ["Opens file.txt in an editor", "Deletes file.txt", "Prints an error since the file is missing"],
+   "explain": "touch creates the file if it doesn't already exist, or updates its modification timestamp if it does."
+  },
+  {
+   "topic": "Permissions",
+   "q": "What does the permission string 'rwxr-xr--' mean for the file owner?",
+   "correct": "Read, write and execute",
+   "distractors": ["Read and write only", "Read only", "Execute only"],
+   "explain": "The first three characters represent the owner's permissions: r (read), w (write), x (execute) — all three are present here."
+  },
+  {
+   "topic": "Permissions",
+   "q": "Which command changes file ownership?",
+   "correct": "chown",
+   "distractors": ["chmod", "chgrp", "chattr"],
+   "explain": "chown changes the owner (and optionally group) of a file. chmod changes permissions, and chgrp changes only the group."
+  },
+  {
+   "topic": "Permissions",
+   "q": "What does 'chmod 755 script.sh' set the permissions to?",
+   "correct": "Owner: read/write/execute, group and others: read/execute",
+   "distractors": ["Owner: read only, everyone else: no access", "Everyone: full read/write/execute", "Owner: execute only"],
+   "explain": "755 in octal breaks down to rwx (7) for owner, r-x (5) for group, and r-x (5) for others."
+  },
+  {
+   "topic": "Process Management",
+   "q": "Which command lists currently running processes?",
+   "correct": "ps",
+   "distractors": ["ls", "top -l", "jobs"],
+   "explain": "ps displays information about active processes. 'top' shows a live, continuously updating view rather than a single snapshot list."
+  },
+  {
+   "topic": "Process Management",
+   "q": "Which signal does 'kill -9' send to a process?",
+   "correct": "SIGKILL",
+   "distractors": ["SIGTERM", "SIGHUP", "SIGSTOP"],
+   "explain": "Signal 9 is SIGKILL, which forcibly terminates a process immediately without allowing cleanup. SIGTERM (15) is the default, gentler signal."
+  },
+  {
+   "topic": "Process Management",
+   "q": "What does appending '&' to a command do?",
+   "correct": "Runs the command in the background",
+   "distractors": ["Pipes the output to another command", "Redirects errors to a file", "Runs the command with elevated privileges"],
+   "explain": "Appending & runs the job in the background, returning control of the shell immediately."
+  },
+  {
+   "topic": "Text Processing",
+   "q": "Which command searches for a text pattern within files?",
+   "correct": "grep",
+   "distractors": ["find", "sed", "awk"],
+   "explain": "grep searches file contents for lines matching a pattern. 'find' searches for files by name or attribute, not content."
+  },
+  {
+   "topic": "Text Processing",
+   "q": "What does the pipe symbol '|' do in a shell command?",
+   "correct": "Sends the output of one command as input to another",
+   "distractors": ["Runs two commands simultaneously in parallel", "Redirects output to a file", "Comments out the rest of the line"],
+   "explain": "The pipe connects the standard output of the command on its left to the standard input of the command on its right."
+  },
+  {
+   "topic": "Text Processing",
+   "q": "Which command displays the last few lines of a file by default?",
+   "correct": "tail",
+   "distractors": ["head", "cat", "less"],
+   "explain": "tail shows the end of a file (last 10 lines by default). head shows the beginning instead."
+  },
+  {
+   "topic": "Package/System",
+   "q": "On a Debian-based system, which command is used to install a package?",
+   "correct": "apt install",
+   "distractors": ["yum install", "pacman -S", "brew install"],
+   "explain": "Debian and Ubuntu use APT as their package manager, so 'apt install' (or the older 'apt-get install') installs packages."
+  },
+  {
+   "topic": "Package/System",
+   "q": "Which command shows disk space usage for filesystems?",
+   "correct": "df",
+   "distractors": ["du", "free", "lsblk"],
+   "explain": "df reports filesystem-level disk usage, while du reports usage for specific files and directories."
+  },
+  {
+   "topic": "Package/System",
+   "q": "What does the 'sudo' command do?",
+   "correct": "Runs a command with superuser (root) privileges",
+   "distractors": ["Switches to another user's home directory", "Schedules a command to run later", "Displays system uptime"],
+   "explain": "sudo (superuser do) temporarily elevates a permitted user's privileges to execute a command as root."
+  },
+  {
+   "topic": "Redirection",
+   "q": "What does '>' do when used after a command?",
+   "correct": "Redirects standard output to a file, overwriting it",
+   "distractors": ["Appends output to a file", "Redirects standard input from a file", "Pipes output to another command"],
+   "explain": "A single '>' redirects stdout to the named file, creating it if needed and overwriting any existing content. '>>' appends instead."
+  },
+  {
+   "topic": "Redirection",
+   "q": "Which file descriptor number represents standard error (stderr)?",
+   "correct": "2",
+   "distractors": ["0", "1", "3"],
+   "explain": "By convention, 0 is stdin, 1 is stdout, and 2 is stderr."
+  }
+ ]
+}
