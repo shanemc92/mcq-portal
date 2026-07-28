@@ -42,5 +42,26 @@
    "Routing",
    "Transport Layer"
   ]
+ },
+ {
+  "file": "sysadmin_250_Question_Bank.json",
+  "title": "Sysadmin Skills Test",
+  "description": "250 multiple-choice questions covering Linux/Unix system administration, networking, DevOps, and security fundamentals, based on the test-your-sysadmin-skills question bank.",
+  "count": 250,
+  "topics": [
+   "Guru Sysadmin - Security",
+   "Junior Sysadmin - Cyber Security",
+   "Junior Sysadmin - Devops",
+   "Junior Sysadmin - Network",
+   "Junior Sysadmin - System",
+   "Regular Sysadmin - Cyber Security",
+   "Regular Sysadmin - Devops",
+   "Regular Sysadmin - Network",
+   "Regular Sysadmin - System",
+   "Senior Sysadmin - Cyber Security",
+   "Senior Sysadmin - Devops",
+   "Senior Sysadmin - Network",
+   "Senior Sysadmin - System"
+  ]
  }
 ]
