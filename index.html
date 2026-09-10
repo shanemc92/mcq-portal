@@ -1,17 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="htb">
 <head>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("mcq-theme")||"htb";}catch(e){}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0e1622">
 <title>Exam Review</title>
 <script src="banks.js" onerror="window.__noBundle=true"></script>
 <style>
-  :root{
+  :root, html[data-theme="htb"]{
     --bg:#0e1622; --card:#131f30; --card2:#0f1a28; --line:#26364d;
     --green:#9fef00; --green-dim:#6aa800; --glow:rgba(159,239,0,.22);
     --txt:#b9c4d8; --hi:#f2f6ff; --muted:#6a7a95;
     --red:#ff5b5b; --red-bg:rgba(255,91,91,.12); --amber:#ffbd2e;
+  }
+  html[data-theme="dark"]{
+    --bg:#0b0e14; --card:#161b25; --card2:#11161f; --line:#262d3a;
+    --green:#58a6ff; --green-dim:#3d7dc4; --glow:rgba(88,166,255,.22);
+    --txt:#c7ccd6; --hi:#f2f6ff; --muted:#7b8496;
+    --red:#f87171; --red-bg:rgba(248,113,113,.12); --amber:#d29922;
+  }
+  html[data-theme="light"]{
+    --bg:#e9edf2; --card:#ffffff; --card2:#f3f5f8; --line:#d3dae3;
+    --green:#0f766e; --green-dim:#0b5851; --glow:rgba(15,118,110,.15);
+    --txt:#334155; --hi:#0e1620; --muted:#5f6b7a;
+    --red:#dc2626; --red-bg:rgba(220,38,38,.10); --amber:#b45309;
+  }
+  html[data-theme="proto"]{
+    --bg:#1b1a29; --card:#201f31; --card2:#1b1a29; --line:#3a3850;
+    --green:#a779ff; --green-dim:#684fa0; --glow:rgba(167,121,255,.22);
+    --txt:#d1d1d3; --hi:#f2f2f5; --muted:#9a98a8;
+    --red:#f87171; --red-bg:rgba(248,113,113,.12); --amber:#fbbf24;
+  }
+  :root{
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --mono:"JetBrains Mono","DejaVu Sans Mono","Ubuntu Mono",monospace;
     --safe-b:env(safe-area-inset-bottom,0px);
@@ -36,6 +57,16 @@
     background:var(--card); border:1px solid var(--line); border-radius:999px;
     padding:5px 12px; flex:none; font-variant-numeric:tabular-nums}
   .score .streak{color:var(--green); margin-left:6px}
+  .themebtn{flex:none; width:30px; height:30px; display:grid; place-items:center;
+    background:var(--card); border:1px solid var(--line); border-radius:999px;
+    color:var(--muted); cursor:pointer; transition:color .12s, border-color .12s}
+  .themebtn:hover{color:var(--green); border-color:var(--green-dim)}
+  .themebtn svg{width:15px; height:15px; fill:none; stroke:currentColor;
+    stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; display:none}
+  html[data-theme="htb"]   .ic-htb   {display:block}
+  html[data-theme="dark"]  .ic-dark  {display:block}
+  html[data-theme="light"] .ic-light {display:block}
+  html[data-theme="proto"] .ic-proto {display:block}
   .progress{height:4px; background:#1a2739; border-radius:99px; margin:12px 0 0; overflow:hidden}
   .progress > span{display:block; height:100%; width:0; background:var(--green);
     box-shadow:0 0 10px var(--glow); transition:width .35s ease}
@@ -145,6 +176,12 @@
     <div class="topbar">
       <div class="bank" id="bankName">exam review</div>
       <div class="score" id="scorewrap"><span id="score">0/0</span><span class="streak hidden" id="streak"></span></div>
+      <button class="themebtn" id="themeBtn" type="button" title="Switch theme">
+        <svg class="ic-htb" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l8.5 4.9v9.2L12 21.5l-8.5-4.9V7.4z"/><path d="M12 2.5v19M3.5 7.4l8.5 4.9 8.5-4.9M12 12.3v9.2"/></svg>
+        <svg class="ic-dark" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg>
+        <svg class="ic-light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        <svg class="ic-proto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.1"/><ellipse cx="12" cy="12" rx="9.5" ry="4.2"/><ellipse cx="12" cy="12" rx="9.5" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9.5" ry="4.2" transform="rotate(120 12 12)"/></svg>
+      </button>
     </div>
     <div class="progress"><span id="progFill"></span></div>
   </header>
@@ -200,6 +237,21 @@
 
 <script>
 const $=id=>document.getElementById(id);
+
+const THEMES=["htb","dark","light","proto"];
+const THEME_NAMES={htb:"HTB",dark:"Dark",light:"Light",proto:"Proto"};
+function applyTheme(t){
+  if(!THEMES.includes(t)) t="htb";
+  document.documentElement.dataset.theme=t;
+  const next=THEMES[(THEMES.indexOf(t)+1)%THEMES.length];
+  $("themeBtn").title="Switch theme ("+THEME_NAMES[t]+" -> "+THEME_NAMES[next]+")";
+  try{localStorage.setItem("mcq-theme",t);}catch(e){}
+}
+$("themeBtn").addEventListener("click",()=>{
+  const cur=document.documentElement.dataset.theme||"htb";
+  applyTheme(THEMES[(THEMES.indexOf(cur)+1)%THEMES.length]);
+});
+applyTheme(document.documentElement.dataset.theme);
 
 function normQ(r){
   const q=r.q||r.question, correct=r.correct||r.answer, d=r.distractors||[];
