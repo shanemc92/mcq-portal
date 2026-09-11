@@ -1,4 +1,4 @@
-# Exam Review -- multi-course flashcard quiz
+# MCQ-Portal -- multi-course flashcard quiz
 
 An offline MCQ flashcard player with four switchable themes. Each course is a
 separate JSON bank in `banks/`; a dropdown lets you pick which one to drill.
