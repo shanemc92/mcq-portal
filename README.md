@@ -1,31 +1,43 @@
 # Exam Review -- multi-course flashcard quiz
 
-A HackTheBox-themed, offline MCQ flashcard player. Each course is a separate
-JSON bank in `banks/`; a dropdown lets you pick which one to drill.
+An offline MCQ flashcard player with four switchable themes. Each course is a
+separate JSON bank in `banks/`; a dropdown lets you pick which one to drill.
 
 ![screenshot](docs/screenshot.gif)
 
-Three generic sample banks are included (`networking-fundamentals.json`,
-`general-knowledge.json`, `linux-command-line.json` — 20+ questions each) so
-you can open `index.html` and try the course
-switcher immediately.
+Four sample banks are included (`networking-fundamentals.json`,
+`general-knowledge.json`, `linux-command-line.json`,
+`sysadmin_250_Question_Bank.json`) so you can open `index.html` and try the
+course switcher immediately.
+
+## Themes
+
+Click the theme button in the top right of the header to cycle through four
+themes (green-on-dark, dark, light, and a proto/wireframe look). Your choice
+is remembered between visits.
 
 ## Folder layout
 
 ```
-exam-quiz/
-  index.html            <- open this
-  generate_index.py    <- rebuilds the index after you add/edit banks
-  banks.js             <- generated (offline bundle)
+mcq-portal/
+  index.html               <- open this
+  generate_index.py        <- rebuilds the index after you add/edit banks
+  MCQ-Generator SKILL.md   <- instructions for generating a bank with an AI assistant
+  banks.js                 <- generated (offline bundle)
   banks/
-    manifest.json      <- generated (used when served over http)
-    coae-final-review.json
-    _template.json     <- copy this to start a new course (ignored by the menu)
+    manifest.json          <- generated (used when served over http)
+    _template.json          <- copy this to start a new course (ignored by the menu)
+    networking-fundamentals.json
+    general-knowledge.json
+    linux-command-line.json
+    sysadmin_250_Question_Bank.json
 ```
 
 ## Add a new course
 
-1. Copy `banks/_template.json` to `banks/my-course.json` and fill it in.
+1. Copy `banks/_template.json` to `banks/my-course.json` and fill it in
+   (by hand, or hand your notes plus `MCQ-Generator SKILL.md` to an AI
+   assistant).
 2. Run the index builder:
 
    ```bash
@@ -67,5 +79,6 @@ options; `generate_index.py` warns and skips anything malformed.
 
 ## Controls
 
-Answer with `A`-`D`, `Enter` for next, `S` to skip, `Q` to quit and score.
-The report breaks the score down by topic and flags weak areas (`< review`).
+Answer with `A`-`D`, `Enter` or `N` for next, `S` to skip, `Q` to quit and
+score. On the results screen, `R` restarts. The report breaks the score down
+by topic and flags weak areas (`< review`).
